@@ -1,0 +1,14 @@
+{
+  "name": "basic-informational-site",
+  "version": "1.0.0",
+  "description": "Basic Information Site made for The Odin Project.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
