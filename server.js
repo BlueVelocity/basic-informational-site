@@ -1,5 +1,4 @@
 import http from "node:http";
-import url from "node:url";
 import fs from "node:fs";
 
 const server = new http.createServer((req, res) => {
@@ -11,14 +10,20 @@ const server = new http.createServer((req, res) => {
 
   let html;
 
-  if (q.pathname.slice(1) == "") {
-    html = fs.readFileSync("./src/index.html");
-  } else if (q.pathname.slice(1) == "about") {
-    html = fs.readFileSync("./src/about.html");
-  } else if (q.pathname.slice(1) == "contact-me") {
-    html = fs.readFileSync("./src/contact-me.html");
-  } else {
-    html = fs.readFileSync("./src/404.html");
+  switch (q.pathname.slice(1)) {
+    case "": {
+      html = fs.readFileSync("./src/index.html");
+      break
+    };
+    case "about": {
+      html = fs.readFileSync("./src/about.html");
+      break
+    };
+    case "contact-me": {
+      html = fs.readFileSync("./src/contact-me.html");
+      break
+    };
+    default: html = fs.readFileSync("./src/404.html");
   }
 
   res.end(html);
