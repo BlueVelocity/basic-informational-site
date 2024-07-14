@@ -15,6 +15,10 @@ const server = new http.createServer((req, res) => {
       html = fs.readFileSync("./src/index.html");
       break
     };
+    case "homepage": {
+      html = fs.readFileSync("./src/index.html");
+      break
+    };
     case "about": {
       html = fs.readFileSync("./src/about.html");
       break
